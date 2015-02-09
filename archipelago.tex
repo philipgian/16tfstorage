@@ -27,6 +27,26 @@
 
 \setbeamerfont{institute}{size=\large}
 
+% Use custom footline
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+      $16^{th}$ TF-Storage Meeting\hspace{8pt}\insertframenumber{} / \inserttotalframenumber{}
+    \end{beamercolorbox}%
+    }%
+    \vskip0pt%
+}
+%% Un-comment to remove navigation symbols:
+%\setbeamertemplate{navigation symbols}{}
+
 \title[Archipelago]{Archipelago:\\ New Cloud Storage Backend of GRNET}
 
 \author[F. Giannakos \and C. Nanakos]
