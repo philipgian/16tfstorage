@@ -142,17 +142,20 @@ February 13, 2015}
 
 \begin{frame}{Motivation}
   \begin{itemize}
-  \item Pithos
+  \item Pithos (Storage Sevice)
     \begin{itemize}
+      \item Swift API
       \item Uploaded Files / Images
     \end{itemize}
-  \item Plankgton
+  \item Plankton (Image Service)
     \begin{itemize}
+      \item Glance API
       \item Registered Images
     \end{itemize}
-  \item Cyclades
+  \item Cyclades (Compute/Network/Volume Service)
     \begin{itemize}
-      \item Virtual Disks
+      \item Nova/Neutron/Cinder API
+      \item Virtual Disks / Volumes
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -270,6 +273,9 @@ February 13, 2015}
       \item Keeps metadata information for each resource
     \end{itemize}
   \item Operates on mapfiles
+    \begin{itemize}
+      \item not on the actual data
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -288,6 +294,24 @@ February 13, 2015}
 \end{frame}
 
 \begin{frame}{Low level Architecture}
+ \begin{itemize}
+  \item Same Archipelago software stack on each node
+  \item Moduler/Pluggable architecture
+  \item Distinct processes
+    \begin{itemize}
+      \item Communicate via requests on a shared memory segment
+    \end{itemize}
+  \end{itemize}
+
+  \begin{center}
+    \includegraphics[width=.90\linewidth]{figures/archipelago-activity.png}
+  \end{center}
+  \begin{center}
+    \includegraphics[width=.90\linewidth]{figures/archipelago-language-stats.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Low level Architecture}
   \begin{center}
     \includegraphics[width=.90\linewidth]{figures/low-architecture.png}
   \end{center}
@@ -301,7 +325,7 @@ February 13, 2015}
       \end{itemize}
     \item Mappe
       \begin{itemize}
-      \item Keeps and updates the mappings from volume offsets to
+      \item Keeps and updates the mappings from resource offsets to
         individual objects which actually hold the data
       \end{itemize}
     \item Flexible I/O pipeline
@@ -326,7 +350,7 @@ February 13, 2015}
     \end{itemize}
   \item Pithos
     \begin{itemize}
-    \item Web interface
+    \item Web interface / REST API
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -338,8 +362,9 @@ February 13, 2015}
       \item Files (Any FS with POSIX semantics)
       \item RADOS (Using native librados interface)
       \item GlusterFS (Using native libgfapi interface)
+      \item S3/SWIFT (Experimental)
       \end{itemize}
-    \item Future: Anything that can support object semantics
+    \item General: Anything that can support object semantics
   \end{itemize}
 \end{frame}
 
@@ -350,7 +375,9 @@ February 13, 2015}
 \begin{frame}{Advantages over other Solutions}
 \begin{itemize}
   \item Allows for resource compositions from already existing objects
+  \item Standalone resources
   \item Unified view of all cloud resources
+  \item Backend agnostic
 \end{itemize}
 \end{frame}
 
@@ -363,6 +390,7 @@ February 13, 2015}
   \item 3000 VM volumes
   \item $\approx$2.8M user uploaded files
   \item $\approx$25TB deduplicated data
+  \item $\approx$200TB total data before replication
   \item 22M actual objects on the storage backend
 \end{itemize}
 \end{frame}
@@ -383,7 +411,12 @@ February 13, 2015}
       \item Deferred reference counting
       \item Automatic deletion of unused objects
       \end{itemize}
+    \item SSD Read-only caching
+    \begin{itemize}
+      \item Lower latency
     \end{itemize}
+    \item ISCSI target
+  \end{itemize}
 \end{frame}
 
 %% Thanks
@@ -391,7 +424,24 @@ February 13, 2015}
 \section{Thanks}
 
 \begin{frame}{Thanks}
-
+ \begin{itemize}
+  \item Software lives at:
+    \begin{itemize}
+      \item \url{https://www.synnefo.org}
+    \end{itemize}
+  \item Repository:
+    \begin{itemize}
+      \item \url{https://github.com/grnet/archipelago}
+    \end{itemize}
+  \item Documentation:
+    \begin{itemize}
+      \item \url{https://www.synnefo.org/docs/archipelago/latest}
+    \end{itemize}
+  \item Mailing list:
+     \begin{itemize}
+      \item \href{mailto:synnefo@googlegroups.con}{synnefo@googlegroups.com}
+     \end{itemize}
+  \end{itemize}
 \end{frame}
 
 
