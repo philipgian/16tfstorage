@@ -72,7 +72,6 @@ February 13, 2015}
 
 %%---------- Title-page ----------
 \begin{frame}
-
   \begin{textblock*}{3cm}(.75\textwidth,8cm)
     \includegraphics[width=3cm]{template/logos-all.jpg}
   \end{textblock*}
@@ -89,7 +88,6 @@ February 13, 2015}
 \subsection{Background}
 
 \begin{frame}{Background}
-
   \begin{textblock*}{3cm}(.70\textwidth,.75cm)
     \includegraphics[width=3cm]{figures/synnefo-logo.pdf}
   \end{textblock*}
@@ -115,13 +113,11 @@ February 13, 2015}
       \url{https://okeanos-global.grnet.gr}
     \end{itemize}
   \end{itemize}
-
 \end{frame}
 
 \subsection{Motivation}
 
 \begin{frame}{Motivation}
-
   \begin{itemize}
   \item Pithos
     \begin{itemize}
@@ -136,11 +132,9 @@ February 13, 2015}
       \item Virtual Disks
     \end{itemize}      
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Unified View of Storage Resources}
-
 \begin{columns}
   \column{.10\linewidth}
   \includegraphics[width=1cm]{figures/files.png}\\[1em]
@@ -162,7 +156,6 @@ February 13, 2015}
     Point in time snapshots of volumes.
   \end{itemize}
 \end{columns}
-
 \end{frame}
 
 %% Archipelago Features
@@ -172,7 +165,6 @@ February 13, 2015}
 \subsection{Storage Features}
 
 \begin{frame}{Archipelago}
-
   \begin{itemize}
     \item Storage Virtualization System
       \begin{itemize}
@@ -188,11 +180,9 @@ February 13, 2015}
         \item Software-Defined Storage
       \end{itemize}
   \end{itemize}
-    
 \end{frame}
 
 \begin{frame}{Backend Agnostic}
-
   \begin{itemize}
     \item Advantages:
       \begin{itemize}
@@ -202,12 +192,9 @@ February 13, 2015}
     \end{itemize}
     \item \okeanos{} started with NFS and migrated to RADOS
   \end{itemize}
-
 \end{frame}
 
-
 \begin{frame}{Storage Backend for the Cloud}
-
   \begin{itemize}
   \item With Archipelago we offer:
     \begin{itemize}
@@ -219,17 +206,14 @@ February 13, 2015}
     \end{itemize}
   \item with zero data movement.
   \end{itemize}
-  
 \end{frame}
 
 \subsection{Services Overview}
 
 \begin{frame}{Services Overview}
-
   \begin{center}
     \includegraphics[width=.85\linewidth]{figures/services.png}
   \end{center}
-  
 \end{frame}
 
 %% Under the Hood
@@ -239,7 +223,6 @@ February 13, 2015}
 \subsection{Everything is a Resource}
 
 \begin{frame}{How it is Done}
-
   \begin{itemize}
     \item Everything is a resource on Archipelago
     \item The \alert{same} resource is exposed as:
@@ -252,13 +235,11 @@ February 13, 2015}
       \item All data remain in one place
       \item No copying of data around
     \end{itemize}
-      
 \end{frame}
 
 \subsection{Mapfiles}
 
 \begin{frame}{Mapfiles}
-
   \begin{itemize}
   \item Mapfile for each resource
     \begin{itemize}
@@ -267,37 +248,29 @@ February 13, 2015}
     \end{itemize}
   \item Operates on mapfiles
   \end{itemize}
-  
 \end{frame}
 
 \begin{frame}{From Mapfiles to Data}
-
   \begin{center}
     \includegraphics[width=.90\linewidth]{figures/mapfiles.png}
   \end{center}
-
 \end{frame}
 
 \subsection{Architecture}
 
 \begin{frame}{High Level Architecture}
-
   \begin{center}
     \includegraphics[width=.90\linewidth]{figures/high-architecture.png}
   \end{center}
-  
 \end{frame}
 
 \begin{frame}{Low level Architecture}
-
   \begin{center}
     \includegraphics[width=.90\linewidth]{figures/low-architecture.png}
   \end{center}
-  
 \end{frame}
 
 \begin{frame}{Core}
-
   \begin{itemize}
     \item Volume composer
       \begin{itemize}
@@ -314,13 +287,11 @@ February 13, 2015}
         functionality 
       \end{itemize}   
   \end{itemize}
-  
 \end{frame}
 
 \subsection{Interfaces}
 
 \begin{frame}{Client Endpoints}
-
   \begin{itemize}
   \item Upstream Native QEMU virtio driver
     \begin{itemize}
@@ -335,11 +306,9 @@ February 13, 2015}
     \item Web interface
     \end{itemize}
   \end{itemize}
-  
 \end{frame}
 
 \begin{frame}{Backend Drivers}
-
   \begin{itemize}
     \item Currently supported backends:
       \begin{itemize}
@@ -349,7 +318,6 @@ February 13, 2015}
       \end{itemize}
     \item Future: Anything that can support object semantics
   \end{itemize}
-  
 \end{frame}
 
 %% Advantages over other Solutions
@@ -357,12 +325,10 @@ February 13, 2015}
 \section{Advantages over other Solutions}
 
 \begin{frame}{Advantages over other Solutions}
-
 \begin{itemize}
   \item Allows for resource compositions from already existing objects
   \item Unified view of all cloud resources
 \end{itemize}
-
 \end{frame}
 
 %% Experience
@@ -370,14 +336,12 @@ February 13, 2015}
 \section{Experience}
 
 \begin{frame}{Experience from Production}
-
 \begin{itemize}
   \item 3000 VM volumes
   \item $\approx$2.8M user uploaded files
   \item $\approx$25TB deduplicated data
   \item 22M actual objects on the storage backend
 \end{itemize}
-
 \end{frame}
 
 %% The Future
@@ -385,7 +349,6 @@ February 13, 2015}
 \section{The Future}
 
 \begin{frame}{Upcoming Features}
-
   \begin{itemize}
     \item New mapfile format
       \begin{itemize}
@@ -398,7 +361,6 @@ February 13, 2015}
       \item Automatic deletion of unused objects
       \end{itemize}
     \end{itemize}
-
 \end{frame}
 
 %% Thanks
@@ -406,7 +368,6 @@ February 13, 2015}
 \section{Thanks}
 
 \begin{frame}{Thanks}
-
 
 \end{frame}
 
