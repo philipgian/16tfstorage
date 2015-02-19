@@ -296,7 +296,7 @@ February 13, 2015}
 \begin{frame}{Low level Architecture}
  \begin{itemize}
   \item Same Archipelago software stack on each node
-  \item Moduler/Pluggable architecture
+  \item Modular/Pluggable architecture
   \item Distinct processes
     \begin{itemize}
       \item Communicate via requests on a shared memory segment
@@ -313,7 +313,7 @@ February 13, 2015}
 
 \begin{frame}{Low level Architecture}
   \begin{center}
-    \includegraphics[width=.90\linewidth]{figures/low-architecture.png}
+    \includegraphics[width=.90\linewidth]{figures/archipelago-api.png}
   \end{center}
 \end{frame}
 
@@ -323,7 +323,7 @@ February 13, 2015}
       \begin{itemize}
       \item Composes resource I/O from individual objects
       \end{itemize}
-    \item Mappe
+    \item Mapper
       \begin{itemize}
       \item Keeps and updates the mappings from resource offsets to
         individual objects which actually hold the data
@@ -374,7 +374,7 @@ February 13, 2015}
 
 \begin{frame}{Advantages over other Solutions}
 \begin{itemize}
-  \item Allows for resource compositions from already existing objects
+  \item Allows for resource composition from already existing objects
   \item Standalone resources
   \item Unified view of all cloud resources
   \item Backend agnostic
@@ -389,8 +389,8 @@ February 13, 2015}
 \begin{itemize}
   \item 3000 VM volumes
   \item $\approx$2.8M user uploaded files
-  \item $\approx$25TB deduplicated data
-  \item $\approx$200TB total data before replication
+  \item $\approx$20TB deduplicated data
+  \item $\approx$80TB total data before replication
   \item 22M actual objects on the storage backend
 \end{itemize}
 \end{frame}
@@ -404,7 +404,7 @@ February 13, 2015}
     \item New mapfile format
       \begin{itemize}
       \item More compact
-      \item Allows for larger volumes with minimal metadata overhead
+      \item Allows for larger volumes with minimal metadata overhead \\ (1PB $\rightarrow$ 2GB)
       \end{itemize}
     \item Garbage collection
       \begin{itemize}
